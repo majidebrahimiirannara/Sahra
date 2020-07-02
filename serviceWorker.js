@@ -18,7 +18,7 @@ self.addEventListener("install", evt => {
       .catch(err => {})
   );
 });
-
+/*
 self.addEventListener('fetch', function(event) {
     console.log(event.request.url);
     event.respondWith(
@@ -33,3 +33,4 @@ self.addEventListener('fetch', function(event) {
 self.addEventListener('activate', () => {
   console.log('SW2 Active');
 });
+*/

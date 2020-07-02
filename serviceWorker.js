@@ -19,17 +19,11 @@ self.addEventListener("install", evt => {
   );
 });
 
-self.addEventListener("fetch", evt => {
-  evt.respondWith(
-    caches
-      .match(evt.request)
-      .then(res => {
-        return res || fetch(evt.request);
-      })
-      .catch(err => {
-        if (evt.request.url.indexOf(".html") > -1) {
-          return caches.match("./pages/fallback.html");
-        }
-      })
-  );
+self.addEventListener('fetch', function(event) {
+    console.log(event.request.url);
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
 });

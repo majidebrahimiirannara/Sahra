@@ -27,3 +27,9 @@ self.addEventListener('fetch', function(event) {
         })
     );
 });
+
+
+
+self.addEventListener('activate', () => {
+  console.log('SW2 Active');
+});

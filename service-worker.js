@@ -7,7 +7,10 @@ var appShellFiles = [
   '/favicon.ico',
   '/wwb12.min.js'
 ];
-
+self.addEventListener('activate', () => {
+	console.log('SW Active');
+});
+/*
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Install');
   e.waitUntil(
@@ -30,4 +33,4 @@ self.addEventListener('fetch', (e) => {
       });
     })
   );
-});
+});*/
